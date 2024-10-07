@@ -1,0 +1,17 @@
+.home{
+  display: flex;
+  flex-direction: column;
+  padding: 90px 0 25px 0;
+}
+
+.home-section p {
+  padding: 10px 0px 10px 23px;
+  font-size: 35px;
+}
+
+.home-section{
+  display: flex;
+  background: white;
+  padding: 20px 80px;
+  }
+

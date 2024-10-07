@@ -1,0 +1,12 @@
+.admin-container {
+  display: flex; 
+  gap: 25px;
+}
+.admin-links > div {
+  background-color: #ff7878;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+}

@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {useState, useEffect, useRef, useContext } from "react";
 import "./Header.css";
 import logo from "../../assets/images/logo-a.png";
 import logo_s from "../../assets/images/long-logo.png";
@@ -12,13 +12,15 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link,useNavigate } from "react-router-dom";
-
+import { UserContext } from "../../context/userContext";
+import axios from 'axios';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [data, setData] = useState(undefined);
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
   const navigate = useNavigate();
+  const {user, ready, setUser} = useContext(UserContext);
   const location = [
     "All",
     "Pretoria",
@@ -49,6 +51,11 @@ const Header = () => {
     }
   };
 
+   const handleSignout = async () =>{
+    await axios.post('/signout');
+    setUser(null);
+    navigate('/');
+  }
   useEffect(() => {
     if (showGuestPopup) {
       document.addEventListener("mousedown", handleClickOutside);
@@ -79,8 +86,9 @@ const Header = () => {
   return (
     <>
       <div className={`header ${isScrolled ? 'scrolled' : ''}`}>
+        <Link to="/">
         <img src={isScrolled ? logo_s : logo} alt="logo" className="header-logo" />
-        
+        </Link>
         {/* Display header text if not scrolled */}
         {!isScrolled ? (
           <div className="header-text">
@@ -104,9 +112,17 @@ const Header = () => {
 
         <div className="profile-container">
           <div className={`become-a-host ${isScrolled ? 'scrolled' : ''}`}>
-          <Link to='/signin' className={`link ${isScrolled ? 'scrolled' : ''}`}  >
-            Become a host
-            </Link>
+          {ready && user && user.role === 'host' && (
+              <span className="link">{user.username}</span>
+            )}
+            {ready && user && user.role === 'user' && (
+              <AccountCircleIcon />
+            )}
+            {ready && user && user.role !== 'host' && (
+              <Link to='/signin' className={`link ${isScrolled ? 'scrolled' : ''}`}>
+                Become a host
+              </Link>
+            )}
             </div>
             <div className="become-a-host">
             <LanguageIcon className={`lang-icon ${isScrolled ? 'scrolled' : ''}`} sx={{ fontSize: "1.3rem" }} />
@@ -116,27 +132,24 @@ const Header = () => {
                 <MenuRoundedIcon className="dropbtn" />
                 <div className="dropdown-content">
                   
-                      <span onClick={() => navigate('/signin')} className='link'>Sign In</span>
-                      <span onClick={() => navigate('/signup')} className='link'>Sign Up</span>
+                  {!user ? (
+                   <div>
+                   <span onClick={() => navigate('/signin')} className='link'>Sign In</span>
+                   <span onClick={() => navigate('/signup')} className='link'>Sign Up</span>
+                 </div>
+                  ):(
                     
-                
-                    <>
-                    
-                        <>
-                          <span onClick={() => navigate('/reservations')} className='link'>Reservations</span>
-                          <span onClick={() => navigate('/bookings')} className='link'>Bookings</span>
-                        </>
-                      
-                        <>
-                          <span onClick={() => navigate('/reservations')} className='link'>View Reservations</span>
-                        </>
-                      
-                      <span className='link'>Signout</span>
-                    </>
-                 
+                     <>
+                     <span onClick={() => navigate('/create-listing')} className='link'>Create Listing</span>
+                     <span onClick={() => navigate('/reservations')} className='link'>View reservations</span>
+                     <span onClick={() => navigate('/listings')} className='link'>View Listings</span>
+                     <span onClick={() => navigate('/profile')} className='link'>Profile</span>
+                     <span onClick={handleSignout} className='link'>Signout</span>
+                     </>
+                  )}
                 </div>
               </div>
-              <AccountCircleIcon />
+              <AccountCircleIcon/>
             </div>
           </div>
         

@@ -12,47 +12,47 @@ const Inspiration = () => {
     const tabContent = {
         Lake: (
             <>
-                <b className="b1-1">Adirondack</b>
-                <p className="p1-1">New York</p>
-                <b className="b1-2">Balsam Lake</b>
-                <p className="p1-2">Wisconsin</p>
-                <b className="b1-3">Buckhorn</b>
-                <p className="p1-3">Ontario</p>
+                <span className="b1-1">Adirondack</span>
+                <span className="p1-1">New York</span>
+                <span className="b1-2">Balsam Lake</span>
+                <span className="p1-2">Wisconsin</span>
+                <span className="b1-3">Buckhorn</span>
+                <span className="p1-3">Ontario</span>
             </>
         ),
         Mountain: (
             <>
-                <b className="b2-1">Algonquin</b>
-                <p className="p2-1">Ontario</p>
-                <b className="b2-2">Bancroft</b>
-                <p className="p2-2">Ontario</p>
-                <b className="b2-3">Clear Lake</b>
-                <p className="p2-3">Ontario</p>
+                <span className="b2-1">Algonquin</span>
+                <span className="p2-1">Ontario</span>
+                <span className="b2-2">Bancroft</span>
+                <span className="p2-2">Ontario</span>
+                <span className="b2-3">Clear Lake</span>
+                <span className="p2-3">Ontario</span>
             </>
         ),
         Coastal: (
             <>
-                <b className="b3-1">Austin</b>
-                <p className="p3-1">Texas</p>
-                <b className="b3-2">Banff</b>
-                <p className="p3-2">Alberta</p>
-                <b className="b3-3">Cultus Lake</b>
-                <p className="p3-3">British Columbia</p>
+                <span className="b3-1">Austin</span>
+                <span className="p3-1">Texas</span>
+                <span className="b3-2">Banff</span>
+                <span className="p3-2">Alberta</span>
+                <span className="b3-3">Cultus Lake</span>
+                <span className="p3-3">British Columbia</span>
                 
             </>
             
         ),
         Island: (
             <>
-                <b className="b4-1">Bala</b>
-                <p className="p4-1">Ontario</p>
-                <b className="b4-2">Bracebridge</b>
-                <p className="p4-2">Ontario</p>
-                <b>Show more</b>
+                <span className="b4-1">Bala</span>
+                <span className="p4-1">Ontario</span>
+                <span className="b4-2">Bracebridge</span>
+                <span className="p4-2">Ontario</span>
+                <span>Show more</span>
             </>
         ),
-        Outdoor: <p>Outdoor Destinations content...</p>,
-        Other: <p>Other Popular Destinations content...</p>,
+        Outdoor: <span>Outdoor Destinations content...</span>,
+        Other: <span>Other Popular Destinations content...</span>,
     };
   return (
     <div>

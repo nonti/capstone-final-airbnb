@@ -6,6 +6,7 @@ import {errorHandler, notFound} from './middlewares/error.middleware.js';
 import connectDB from './config/db.js';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
+import userRouter from './routes/user.routes.js';
 
 connectDB();
 const port = process.env.PORT || 5000;
@@ -21,11 +22,9 @@ app.use(cors({
 app.use(cookieParser());
 app.use(bodyParser.json());
 
-
-
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+app.post('/signup', userRouter);
+app.post('/signin', userRouter);
+app.get('/profile', userRouter);
 
 app.use(notFound);
 app.use(errorHandler);

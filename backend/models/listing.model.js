@@ -1,7 +1,12 @@
 import mongoose from 'mongoose';
 
 const listingSchema = new mongoose.Schema({
-  listingName: {
+  host: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  },
+  title: {
     type: String,
     required: true,
   },
@@ -54,6 +59,7 @@ const listingSchema = new mongoose.Schema({
     type: [String],
     default: [],
   },
+  
 }, {
   timestamps: true,
 });

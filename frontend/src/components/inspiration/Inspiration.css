@@ -62,14 +62,14 @@
     flex: 1;
 }
 
-.inspiration-column-item b
+.inspiration-column-item span
 {
     font-size: 14px;
     color: #222222;
     cursor: pointer;
 }
 
-.inspiration-column-item p
+.inspiration-column-item span
 {
     font-size: 14px;
      color: #717171;

@@ -253,11 +253,11 @@ outline: none;
 }
 .search-bar-container {
   display: flex;
-  justify-content: flex-start; /* Aligns search bar elements */
+  justify-content: flex-start; 
   align-items: center;
-  gap: 0.5rem; /* Space between search elements */
-  padding: 0.35rem 1rem; /* Padding around the search bar */
-  margin-left: 150px; /* Match the margin of the header text */
+  gap: 0.5rem; 
+  padding: 0.35rem 1rem; 
+  margin-left: 150px; 
 }
 
 

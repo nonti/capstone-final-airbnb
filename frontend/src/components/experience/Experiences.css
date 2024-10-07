@@ -1,0 +1,62 @@
+
+.img-container-canyon{
+  display:flex;
+  width: 60vw;
+  height: 60vh;
+  background:url(https://www.agoda.com/wp-content/uploads/2020/01/Upper-Antelope-Canyon-tours.jpg);
+  background-size: cover;
+  background-position:center;
+  border-radius: 15px;
+  margin: 0px 0px 50px 10px;
+  padding: 0px 10px;
+  width: 80%;
+  color: #fff;
+}
+
+.img-container-chef {
+  display:flex;
+  width: 60vw;
+  height: 60vh;
+  background:url(https://www.houseofknives.com.au/cdn/shop/articles/Featurephoto.jpg?v=1603764350);
+  background-size: cover;
+  background-position:center;
+  border-radius: 15px;
+  margin: 0px 0px 50px 20px;
+  padding: 0px 10px;
+  width: 80%;
+  color: #fff;
+}
+
+ .img-container-chef {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 60px 40px 20px 55px;
+}
+
+.img-container-canyon {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 60px 40px 20px 95px;
+}
+
+.img-container-canyon .btn, .img-container-chef .btn {
+  position: absolute;
+  top: 170px; /* Adjust this value to move the button up or down */
+  left: 27%;
+  transform: translateX(-80%); /* Center the button */
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 0px 20px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.img-container-canyon .btn:hover, .img-container-chef .btn:hover {
+  background-color: #ff7878;
+}
+

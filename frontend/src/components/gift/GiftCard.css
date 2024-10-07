@@ -1,0 +1,40 @@
+
+.btn-learn {
+  background-color: #000;
+  color: #fff;
+  padding:  20px 0px 20px 10px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.btn-learn:hover {
+  background-color: #ff7878;
+}
+
+.gift-card-info{
+  margin: 0px -50px 0px 0px;
+  padding: 0px 0px 20px 0px;
+}
+
+.gift-card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gift-card-img img {
+  padding: 10px 50px 15px 50px;
+  margin: 0px 210px;
+  width: 100%;
+}
+
+.img-gift-card {
+  display: flex;
+  align-items: center;
+  padding: auto 20px 10px 40px;
+}
